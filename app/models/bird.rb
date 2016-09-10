@@ -4,7 +4,7 @@ class Bird
   field :name, type: String
   field :family, type: String
   field :continents, type: String
-  field :added, type: DateTime, default: ->{ Date.today }
+  field :added, type: Date, default: ->{ Date.today }
   field :visible, type: Mongoid::Boolean, default: false
 
   # validations
