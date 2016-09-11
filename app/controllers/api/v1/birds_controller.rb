@@ -4,7 +4,7 @@ module Api;module V1
     def create
       @bird = Bird.new(bird_params)
       if @bird.save
-        render json: @bird
+        render json: @bird, status: 201
       else
         render :json => { :errors => @bird.errors.full_messages }, status: :bad_request
       end
@@ -16,12 +16,12 @@ module Api;module V1
     end
 
     def show
-      render json: @bird, status: 201
+      render json: @bird, status: 200
     end
 
     def destroy     
       @bird.destroy
-      head 201    
+      head 200    
     end
 
     private

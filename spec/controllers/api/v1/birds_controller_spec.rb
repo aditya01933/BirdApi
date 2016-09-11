@@ -9,7 +9,7 @@ module Api;module V1
           expect {
             post :create, params: {data:{attributes: FactoryGirl.attributes_for(:bird)}}
           }.to change(Bird, :count).by(1)
-          expect(response).to be_success          
+          expect(response.status).to eq 201          
         end
       end
       context "with wrong params" do
@@ -29,6 +29,7 @@ module Api;module V1
         visiblity_status = body.all? {|e| e["visible"] == true}
         expect(body.count).to be > 1
         expect(visiblity_status).to be true
+        expect(response.status).to be 200
       end
     end
 
@@ -37,7 +38,7 @@ module Api;module V1
         it "returns the specified bird" do
           bird_id = FactoryGirl.create(:bird).id
           get :show, params: {id: bird_id}
-          expect(response.status).to eq 201
+          expect(response.status).to eq 200
           body = JSON.parse(response.body)
           expect(body["id"]).to eq(bird_id.to_s)
         end  
@@ -55,7 +56,7 @@ module Api;module V1
         it "delete the specified bird" do
           bird_id = FactoryGirl.create(:bird).id
           delete :destroy, params: {id: bird_id}
-          expect(response.status).to eq 201
+          expect(response.status).to eq 200
         end
       end
       context "when bird not found" do 
