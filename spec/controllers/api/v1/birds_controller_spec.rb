@@ -22,11 +22,13 @@ module Api;module V1
     end
 
     describe "GET /birds" do
-      it "returns all birds" do 
+      it "returns all visible birds" do 
         get :index
         expect(response.status).to eq 200
         body = JSON.parse(response.body)
+        visiblity_status = body.all? {|e| e["visible"] == true}
         expect(body.count).to be > 1
+        expect(visiblity_status).to be true
       end
     end
 

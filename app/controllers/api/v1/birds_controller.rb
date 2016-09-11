@@ -11,7 +11,7 @@ module Api;module V1
     end
 
     def index
-      @birds = Bird.all
+      @birds = Bird.visible
       render json: @birds
     end
 

@@ -10,4 +10,6 @@ class Bird
   # validations
   validates :name, :family, :continents, presence: :true
 
+  # scopes
+  scope :visible, -> { where(visible: true) }
 end
