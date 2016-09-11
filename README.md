@@ -1,24 +1,13 @@
-# README
+# Rails 5 BIRD-API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup Steps:
 
-Things you may want to cover:
+* Rails 5 needed to run the app.
 
-* Ruby version
+* Run guard or rspec for testing.
 
-* System dependencies
+* URL /v1/{bird rest routes}
 
-* Configuration
+* Mongodb as database
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
