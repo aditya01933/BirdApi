@@ -3,7 +3,6 @@ FactoryGirl.define do
     name Faker::Name.name 
     family Faker::Name.name 
     continents [Faker::Address.country, Faker::Address.country]
-    added Date.today
     visible true
   end
 end

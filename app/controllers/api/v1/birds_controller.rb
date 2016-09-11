@@ -1,6 +1,7 @@
 module Api;module V1
   class BirdsController < ApiController
     before_action :set_bird, only: [:show, :destroy]
+    
     def create
       @bird = Bird.new(bird_params)
       if @bird.save
