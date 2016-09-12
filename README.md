@@ -10,4 +10,5 @@ Setup Steps:
 
 * Mongodb as database
 
+* JSON formating is according to Standard JSON schema followed by other opensource API's like Stripe etc.
 
