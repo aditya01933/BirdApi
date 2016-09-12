@@ -1,7 +1,6 @@
 module Api;module V1
   class BirdsController < ApiController
     before_action :set_bird, only: [:show, :destroy]
-    
     def create
       @bird = Bird.new(bird_params)
       if @bird.save
@@ -34,8 +33,12 @@ module Api;module V1
       end
     end
 
-    def bird_params
-      ActiveModelSerializers::Deserialization.jsonapi_parse(params)
+    def bird_params     
+      ActiveModelSerializers::Deserialization.jsonapi_parse(
+              params, 
+              only: [:name, :family, :continents, :added, :visible]
+              )
+      
     end  
 
   end

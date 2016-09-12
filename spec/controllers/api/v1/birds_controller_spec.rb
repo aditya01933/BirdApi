@@ -14,7 +14,8 @@ module Api;module V1
       end
       context "with wrong params" do
         it "returns 400 Bad Request" do
-          post :create, params: {data: "I am BAD"}
+          post :create, params: {dat: "I am BAD"}
+          pp response.status
           expect(response).to be_bad_request
           expect(response.status).to eq(400)
         end
